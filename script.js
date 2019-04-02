@@ -13,8 +13,7 @@ function getWeather() {
     .then(
       function (response) {
         if (response.status !== 200) {
-          console.log('Looks like there was a problem. Status Code: ' +
-            response.status);
+          console.log('Looks like there was a problem. Status Code: ' + response.status);
           return;
         }
         response.json().then(function (data) {
@@ -24,7 +23,6 @@ function getWeather() {
         });
       }
     )
-
     .catch(function (err) {
       console.log('Fetch Error :-S', err);
     })
@@ -32,7 +30,6 @@ function getWeather() {
 
 function showWeather(jsonObj) {
   document.querySelector("h1").textContent = jsonObj.name;
-
   document.querySelector("p").textContent = "temperatura: " + jsonObj.main.temp;
 }
 
