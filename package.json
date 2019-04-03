@@ -1,0 +1,19 @@
+{
+  "name": "vetero",
+  "version": "1.0.0",
+  "description": "Vetero Weather App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/campteam/vetero.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/campteam/vetero/issues"
+  },
+  "homepage": "https://gitlab.com/campteam/vetero#readme"
+}
