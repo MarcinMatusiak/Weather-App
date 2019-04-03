@@ -5,7 +5,9 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" type = "text/css">
+    <link rel="stylesheet" href="css/fontello/css/fontello.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,600&amp;subset=latin-ext" rel="stylesheet">
     <title>Vetero Weather App</title>
 </head>
 <body>
@@ -14,65 +16,163 @@
     <section class="container__left">
         <div class="container__left--today">
             <h1>Dzisiaj</h1>
+            <p class = "date">
+                Poniedziałek, 8.04.2019<!-- date -->
+            </p>
+            <p class = "hour">
+                11:30
+            </p>
             <div>
-                <img src="" alt="">
-                <p></p>
+                <img class="weather weather_today" src="img/fog.svg" alt="weather.value">
+                <h3 class="temp temp_today">
+                    20<sup>o</sup>C<!-- temperature.value -->
+                </h3>
             </div>
-            <p></p>
-            <p></p>
-            <p></p>
+            <div>
+                <p class="temp_max temp_max_today">
+                    <i class="icon-thermometer"></i>24<sup>o</sup>C <!-- temperature.max -->
+                </p>
+                <p class="temp_min temp_min_today">
+                    <i class="icon-thermometer-quarter"></i>10<sup>o</sup>C <!-- temperature.min-->
+                </p>
+            </div>
+            <p class="pressure pressure_today">
+                <i class="icon-compass"></i>1024hPa<!-- pressure -->
+            </p>
+            <p class="humidity humidity_today">
+                <i class="icon-droplet"></i>54%<!-- humidity -->
+            </p>
+            <p class="wind_speed wind_speed_today">
+                <i class="icon-wind"></i>12<sup>m</sup>/<sub>s</sub><!-- wind.speed< -->
+            </p>
         </div>
     </section>
     <section class="container__right">
         <div class="container__right--tomorrow">
-            <h1>Jutro</h1>
-            <p></p>
+            <h1>Jurto</h1>
+            <p class="date date_tomorrow">
+                Wtorek, 9.04.2019<!-- date -->
+            </p>
             <div>
-                <p></p>
-                <p></p>
-                <p></p>
+                <img class="weather weather_tomorrow" src="img/clear.svg" alt="weather.value">
             </div>
+            <p class="temp_max temp_max_tomorrow">
+                <i class="icon-thermometer"></i>24<sup>o</sup>C<!-- temperature.max -->
+            </p>
+            <p class="temp_min temp_min_tomorrow">
+                <i class="icon-thermometer-quarter"></i>10<sup>o</sup>C<!-- temperature.min-->
+            </p>
+            <p class="pressure pressure_tomorrow">
+                <i class="icon-compass"></i>1024hPa<!-- pressure -->
+            </p>
+            <p class="humidity  humidity_tomorrow">
+                <i class="icon-droplet"></i>54%<!-- humidity -->
+            </p>
+            <p class="wind_speed wind_speed_tomorrow">
+                <i class="icon-wind"></i>12<sup>m</sup>/<sub>s</sub><!-- wind.speed -->
+            </p>
         </div>
         <div class="container__right--nextDays">
             <div>
+                <p class="date date_d3">
+                10.04.2019<!-- date.short -->
+                </p>
                 <div>
-                    <img src="" alt="">
-                    <p></p>
+                    <img class="weather weather_d3" src="img/thunderstorm.svg" alt="weather.value">
                 </div>
-                <div>
-                    <p></p>
-                    <p></p>
-                </div>
+                <p class="temp_max temp_max_d3">
+                    <i class="icon-thermometer"></i>24<sup>o</sup>C
+                    <!-- temperature.max -->
+                </p>
+                <p class="temp_min temp_min_d3">
+                    <i class="icon-thermometer-quarter"></i>10<sup>o</sup>C
+                    <!-- temperature.min-->
+                </p>
+                <p class="pressure pressure_d3">
+                    <i class="icon-compass"></i>1024hPa
+                    <!-- pressure -->
+                </p>
+                <p class="humidity  humidity_d3">
+                    <i class="icon-droplet"></i>54%
+                    <!-- humidity -->
+                </p>
+                <p class="wind_speed wind_speed_d3">
+                    <i class="icon-wind"></i>12<sup>m</sup>/<sub>s</sub><!-- wind.speed -->
+                </p>
             </div>
             <div>
+                <p class="date date_d4">
+                    11.04.2019
+                    <!-- date.short -->
+                </p>
                 <div>
-                    <img src="" alt="">
-                    <p></p>
+                    <img class="weather weather_d4" src="img/rain.svg" alt="weather.value">
                 </div>
-                <div>
-                    <p></p>
-                    <p></p>
-                </div>
+                <p class="temp_max temp_max_d4">
+                    <i class="icon-thermometer"></i>24<sup>o</sup>C
+                    <!-- temperature.max -->
+                </p>
+                <p class="temp_min temp_min_d4">
+                    <i class="icon-thermometer-quarter"></i>10<sup>o</sup>C
+                    <!-- temperature.min-->
+                </p>
+                <p class="pressure pressure_d4">
+                    <i class="icon-compass"></i>1024hPa
+                    <!-- pressure -->
+                </p>
+                <p class="humidity  humidity_d4">
+                    <i class="icon-droplet"></i>54%
+                    <!-- humidity -->
+                </p>
+                <p class="wind_speed wind_speed_d4">
+                    <i class="icon-wind"></i>12<sup>m</sup>/<sub>s</sub><!-- wind.speed -->
+                </p>
             </div>
             <div>
+                <p class="date date_d5">
+                    12.04.2019<!-- date.short -->
+                </p>
                 <div>
-                    <img src="" alt="">
-                    <p></p>
+                    <img class="weather weather_d5" src="img/shower rain.svg" alt="weather.value">
                 </div>
-                <div>
-                    <p></p>
-                    <p></p>
-                </div>
+                <p class="temp_max temp_max_d5">
+                    <i class="icon-thermometer"></i>24<sup>o</sup>C<!-- temperature.max -->
+                </p>
+                <p class="temp_min temp_min_d5">
+                    <i class="icon-thermometer-quarter"></i>10<sup>o</sup>C<!-- temperature.min-->
+                </p>
+                <p class="pressure pressure_d5">
+                    <i class="icon-compass"></i>1024hPa<!-- pressure -->
+                </p>
+                <p class="humidity  humidity_d5">
+                    <i class="icon-droplet"></i>54%<!-- humidity -->
+                </p>
+                <p class="wind_speed wind_speed_d5">
+                    <i class="icon-wind"></i>12<sup>m</sup>/<sub>s</sub><!-- wind.speed -->
+                </p>
             </div>
             <div>
+                <p class="date date_d6">
+                    13.04.2019<!-- date.short -->
+                </p>
                 <div>
-                    <img src="" alt="">
-                    <p></p>
+                    <img class="weather weather_d6" src="img/few clouds.svg" alt="weather.value">
                 </div>
-                <div>
-                    <p></p>
-                    <p></p>
-                </div>
+                <p class="temp_max temp_max_d6">
+                    <i class="icon-thermometer"></i>24<sup>o</sup>C<!-- temperature.max -->
+                </p>
+                <p class="temp_min temp_min_d6">
+                    <i class="icon-thermometer-quarter"></i>10<sup>o</sup>C<!-- temperature.min-->
+                </p>
+                <p class="pressure pressure_d6">
+                    <i class="icon-compass"></i>1024hPa<!-- pressure -->
+                </p>
+                <p class="humidity  humidity_d6">
+                    <i class="icon-droplet"></i>54%<!-- humidity -->
+                </p>
+                <p class="wind_speed wind_speed_d6">
+                    <i class="icon-wind"></i>12<sup>m</sup>/<sub>s</sub><!-- wind.speed -->
+                </p>
             </div>
         </div>
     </section>
