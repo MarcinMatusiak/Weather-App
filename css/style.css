@@ -1,0 +1,102 @@
+
+/* Default reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Main container *****************************************************************************************************/
+.container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Left container today weather */
+.container__left {
+    width: 30%;
+}
+
+/* Right container all next days */
+.container__right {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+.container__left, .container__right {
+    height: 100%;
+    padding: 25px;
+}
+
+/* Style for today & tomorrow weather *********************************************************************************/
+.container__left--today, .container__right--tomorrow {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+/* Style for today weather *****************************************************************************************/
+/* TU STYLUJEMY KOLORKI ITP. */
+.container__left--today {
+
+}
+
+.container__left--today div {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: auto;
+}
+
+/* Style for tomorrow weather *****************************************************************************************/
+/* TU STYLUJEMY KOLORKI ITP. */
+.container__right--tomorrow {
+
+}
+
+.container__right--tomorrow div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    height: auto;
+
+}
+
+/* Style for next days weather ****************************************************************************************/
+.container__right--nextDays {
+    display: flex;
+    width: 100%;
+    height: 40%;
+}
+
+/* Style for small weather days */
+/* TU STYLUJEMY KOLORKI ITP. */
+.container__right--nextDays div {
+
+}
+
+.container__right--nextDays div {
+    width: 17.5%;
+    height: auto;
+}
+
+.container__right--nextDays div > div:first-child {
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+
+.container__right--nextDays div > div:last-child {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
