@@ -9,7 +9,7 @@ const button = document.getElementById("submit");
 button.addEventListener("click", loadWeather);
 
 function loadWeather() {
-  getWeather()
+  getWeather(document.getElementById("city").value)
     .then(result => {
       showWeather(result);
     })
