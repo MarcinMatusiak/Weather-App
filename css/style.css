@@ -64,7 +64,7 @@ body {
 /* TU STYLUJEMY KOLORKI ITP. */
 .container__left--today {
     padding: 25px;
-    background-color: #ffffff4b;
+    background-color: #ffffff4d;
     border-radius: 20px;
 }
 
@@ -79,7 +79,7 @@ body {
 /* TU STYLUJEMY KOLORKI ITP. */
 .container__right--tomorrow {
     padding: 25px;
-    background-color: #ffffff4b;
+    background-color: #ffffff4d;
     border-radius: 20px;
 }
 
@@ -111,7 +111,7 @@ body {
     margin-top: 25px;
     margin-right:25px;
     border-radius: 10px;
-    background-color: #ffffff4b;
+    background-color: #ffffff4d;
 }
 .container__right--nextDays > div:last-child {
     margin-right: 0;
