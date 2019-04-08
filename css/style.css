@@ -22,27 +22,24 @@ body {
 /* Main container *****************************************************************************************************/
 .container {
     display: flex;
-    /* width: 100vw; niepotrzebne rozciąga strone szeżej niż okno przeglądarki */
     height: 100vh;
 }
 
 /* Left container today weather */
 .container__left {
-    width: 30%;
+    flex-grow: 1;
 }
 
 /* Right container all next days */
 
 .container__left, .container__right {
-    height: 100%;
     padding: 25px;
 }
 
 .container__right {
+    flex-grow: 2;
     display: flex;
     flex-direction: column;
-    width: 70%;
-    padding-left: 0;
 }
 
 /* Style for today & tomorrow weather *********************************************************************************/
@@ -126,7 +123,7 @@ body {
     width: 100%;
     height: auto;
     display: flex;
-    
+
 }
 
 .container__right--nextDays div > div:last-child {
