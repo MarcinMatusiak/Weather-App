@@ -1,0 +1,20 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2019 by original authors @ fontello.com</metadata>
+<defs>
+<font id="fontello" horiz-adv-x="1000" >
+<font-face font-family="fontello" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="wind" unicode="&#xe800;" d="M123 194q0 13 12 22t29 9h490q39 0 66-27t28-67-28-66-66-28-66 28-28 66q0 16 6 31h-402q-18 0-29 9t-12 23z m0 125q0 13 9 22t22 9h600q-6 15-6 31 0 39 27 66t66 28 67-28 27-66-27-66-67-28h-687q-13 0-22 9t-9 23z m0 124q0 14 9 23t22 9h287q-6 15-6 31 0 39 28 66t66 28 66-28 28-66-28-66-66-28h-375q-13 0-22 9t-9 22z" horiz-adv-x="1000" />
+
+<glyph glyph-name="compass" unicode="&#xe801;" d="M0 350q0 207 146 353t354 146 353-146 146-353-146-354-353-146-354 146-146 354z m125 0q0-154 110-265t265-110 263 109q112 112 112 266t-111 264-264 111-265-111-110-264z m187-188l125 250 250 125-125-250z" horiz-adv-x="1000" />
+
+<glyph glyph-name="droplet" unicode="&#xe803;" d="M290 822q14-118 60-219t92-159 82-136 36-160q0-114-83-196t-197-82-197 82-83 196q0 82 36 160t82 136 92 159 60 219q2 8 11 8t9-8z m-42-392q2 4-2 14-6 6-14 6t-12-6l-40-58q-32-46-48-70t-34-75-18-101q0-24 17-41t41-17q58 0 58 68 0 94 42 246 2 6 5 17t5 17z" horiz-adv-x="560" />
+
+<glyph glyph-name="thermometer" unicode="&#xf2c7;" d="M357 100q0-45-31-76t-76-31-76 31-31 76q0 34 19 61t52 40v506h72v-506q32-12 52-40t19-61z m72 0q0 43-19 80t-53 63v428q0 45-31 76t-76 32-76-32-31-76v-428q-34-25-53-63t-19-80q0-74 53-126t126-53 126 53 53 126z m71 0q0-103-73-177t-177-73-177 73-73 177q0 102 71 175v396q0 75 53 127t126 52 126-52 53-127v-396q71-73 71-175z m71 321v-71h-107v71h107z m0 143v-71h-107v71h107z m0 143v-71h-107v71h107z" horiz-adv-x="571.4" />
+
+<glyph glyph-name="thermometer-quarter" unicode="&#xf2ca;" d="M357 100q0-45-31-76t-76-31-76 31-31 76q0 34 19 61t52 40v78h72v-78q32-12 52-40t19-61z m72 0q0 43-19 80t-53 63v428q0 45-31 76t-76 32-76-32-31-76v-428q-34-25-53-63t-19-80q0-74 53-126t126-53 126 53 53 126z m71 0q0-103-73-177t-177-73-177 73-73 177q0 102 71 175v396q0 75 53 127t126 52 126-52 53-127v-396q71-73 71-175z m71 321v-71h-107v71h107z m0 143v-71h-107v71h107z m0 143v-71h-107v71h107z" horiz-adv-x="571.4" />
+</font>
+</defs>
+</svg>

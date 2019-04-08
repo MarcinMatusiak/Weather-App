@@ -6,44 +6,63 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: calc(14px + (26 - 12) * ((100vw - 300px) / (1920 - 300)));
+    --xl-blue: #88DBF5;
+    --l-blue: #21BCF0;
+    --blue: #079AE5;
+    --d-blue: #0155B8;
+    --xd-blue: #010061;
+    color: #fff;
+    background-color: var(--xd-blue);
+
+}
+
 /* Main container *****************************************************************************************************/
 .container {
     display: flex;
-    width: 100vw;
     height: 100vh;
 }
 
 /* Left container today weather */
 .container__left {
-    width: 30%;
+    flex-grow: 1;
 }
 
 /* Right container all next days */
-.container__right {
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-}
 
 .container__left, .container__right {
-    height: 100%;
     padding: 25px;
+}
+
+.container__right {
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Style for today & tomorrow weather *********************************************************************************/
 .container__left--today, .container__right--tomorrow {
     display: flex;
+    flex-grow: 1;
     width: 100%;
-    height: 100%;
+    /*height: 100%; prawy kontener nie może miec 100% wysokości bo nie mieszczą się pozostałe dni*/
     flex-direction: column;
     align-items: flex-start;
-    justify-content: flex-start;
+    justify-content: space-between;
+}
+
+.container__left--today {
+    height: 100%;
 }
 
 /* Style for today weather *****************************************************************************************/
 /* TU STYLUJEMY KOLORKI ITP. */
 .container__left--today {
-
+    padding: 25px;
+    background-color: #ffffff4d;
+    border-radius: 20px;
 }
 
 .container__left--today div {
@@ -56,7 +75,9 @@
 /* Style for tomorrow weather *****************************************************************************************/
 /* TU STYLUJEMY KOLORKI ITP. */
 .container__right--tomorrow {
-
+    padding: 25px;
+    background-color: #ffffff4d;
+    border-radius: 20px;
 }
 
 .container__right--tomorrow div {
@@ -66,7 +87,10 @@
     align-items: center;
     width: 100%;
     height: auto;
+}
 
+.weather_tomorrow {
+    max-width: 20%;
 }
 
 /* Style for next days weather ****************************************************************************************/
@@ -78,12 +102,20 @@
 
 /* Style for small weather days */
 /* TU STYLUJEMY KOLORKI ITP. */
-.container__right--nextDays div {
 
+.container__right--nextDays > div {
+    padding: 10px;
+    margin-top: 25px;
+    margin-right:25px;
+    border-radius: 10px;
+    background-color: #ffffff4d;
+}
+.container__right--nextDays > div:last-child {
+    margin-right: 0;
 }
 
 .container__right--nextDays div {
-    width: 17.5%;
+    width: 25%;
     height: auto;
 }
 
@@ -91,6 +123,7 @@
     width: 100%;
     height: auto;
     display: flex;
+
 }
 
 .container__right--nextDays div > div:last-child {
