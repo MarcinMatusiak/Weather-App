@@ -15,8 +15,8 @@ function getShortDate(n=0) {
 }
 
 function getCurrentHour() {
-    let hour = new Date().getHours();
-    let minutes = new Date().getMinutes();
+    const hour = new Date().getHours();
+    const minutes = new Date().getMinutes();
     return `${hour} : ${minutes}`;
 }
 
