@@ -10,15 +10,15 @@
     --vlightBlue: #C3E5E7;
     --darkOrange: #DF7027;
     --darkestOrange: rgb(201, 88, 14);
-    --lightOrange: #DD8627;
+    --lightOrange: rgb(247, 158, 64);
     --xl-blue: #88DBF5;
     --l-blue: #21BCF0;
     --blue: #079AE5;
     --d-blue: #030324;
     --xd-blue: #47476d;
     --darkestBlue: #010157;
-    --bckNight: radial-gradient(#47476d, #030324);
-    --bckDay: radial-gradient(#DF7027, #DD8627 60%);
+    --bckNight: linear-gradient(#0e021a, #120b3b, #0d163f, #3a467c, #6d6347);
+    --bckDay: linear-gradient(rgb(196, 105, 9), #DD8627, rgb(192, 126, 55), rgb(196, 144, 88), #0d163f);
 }
 
 body {
@@ -27,24 +27,69 @@ body {
     color: #fff;
 }
 
+/* Night mode body*****************************************************************************************************/
 body.night {
     background-image: var(--bckNight);
+    /* background-size: 100%; */
 }
 
+body.night .container__left--today,
+body.night .container__right--tomorrow {
+    padding: 25px;
+    background-color: rgba(223, 113, 39, 0.753);
+    border-radius: 20px;
+    border: 5px solid rgba(219, 164, 44, 0.103);
+}
+
+body.night .container h1 {
+    display: inline-block;
+    padding: 20px auto;
+    color: white;
+    text-shadow: 1px 1px #9692a8;
+}
+
+body.night .date {
+    color: var(--lightOrange);
+}
+/* 
+body.night .date {
+    /* padding: 0px 0px 100px 0px; */
+    /* color: var(--d-blue); */
+    /* border-bottom: 1px dashed var(--darkOrange); */
+  /*  color: (--d-blue);*/
+/*}*/
+
+/* Day mode body *****************************************************************************************************/
 body.day {
     background-image: var(--bckDay);
+    /* border: 10px solid dark; */
 }
 
-h1.header {
-    display: block;
-    text-align: center;
+body.day .container__left--today,
+body.day .container__right--tomorrow {
+    box-sizing: border-box;
+    padding: 25px;
+    background-color: rgb(28, 24, 70);
+    border-radius: 20px;
+    border: 5px solid rgba(219, 164, 44, 0.103);
+}
+
+body.day .container h1 {
+    display: inline-block;
     color: white;
+    text-shadow: 1px 1px #9692a8;
+
+}
+
+body.day .date {
+    color: var(--xd-blue);
 }
 
 /* Main container *****************************************************************************************************/
 .container {
     display: flex;
     height: 100vh;
+    /* border: 1px solid red; */
 }
 
 /* Left container today weather */
@@ -53,7 +98,6 @@ h1.header {
 }
 
 /* Right container all next days */
-
 .container__left,
 .container__right {
     padding: 25px;
@@ -83,12 +127,6 @@ h1.header {
 
 /* Style for today weather *****************************************************************************************/
 /* TU STYLUJEMY KOLORKI ITP. */
-.container__left--today {
-    padding: 25px;
-    background-color: #ffffff4d;
-    border-radius: 20px;
-}
-
 .container__left--today div {
     display: flex;
     justify-content: space-around;
@@ -96,22 +134,8 @@ h1.header {
     height: auto;
 }
 
-body.day .container h1 {
-    color: var(--darkestBlue);
-}
-
-body.night .container h1 {
-    color: var(--darkestOrange);
-}
-
 /* Style for tomorrow weather *****************************************************************************************/
 /* TU STYLUJEMY KOLORKI ITP. */
-.container__right--tomorrow {
-    padding: 25px;
-    background-color: #ffffff4d;
-    border-radius: 20px;
-}
-
 .container__right--tomorrow div {
     display: flex;
     flex-direction: column;
@@ -129,20 +153,11 @@ body.night .container h1 {
 .container__right--nextDays {
     display: flex;
     width: 100%;
-    height: 56%;
+    height: auto;
 }
 
 /* Style for small weather days */
 /* TU STYLUJEMY KOLORKI ITP. */
-
-body.day .date {
-    color: var(--xd-blue);
-}
-
-body.night .date {
-    color: var(--darkOrange);
-}
-
 .container__right--nextDays>div {
     padding: 10px;
     margin-top: 25px;

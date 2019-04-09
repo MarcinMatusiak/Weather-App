@@ -19,8 +19,8 @@ function loadWeather() {
 }
 
 function changeStyle() {
-  if (19 < currentTime && currentTime <= 5)
-    document.body.className = "night";
+  if (19 < currentTime || currentTime <= 5)
+    document.body.className = "day";
   else
     document.body.className = "day";
 }
