@@ -17,7 +17,7 @@
     --d-blue: #030324;
     --xd-blue: #47476d;
     --darkestBlue: #010157;
-    --bckNight: radial-gradient(#47476d, transparent 10%, #030324);
+    --bckNight: radial-gradient(#47476d, #030324);
     --bckDay: radial-gradient(#DF7027, #DD8627 60%);
 }
 
