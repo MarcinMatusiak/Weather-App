@@ -1,9 +1,7 @@
 import getWeather from './weatherAPI.js';
+import { showWeather, showDate } from './showData.js';
+import { getShortDate, getFullDate }from './date.js';
 
-function showWeather(jsonObj) {
-  document.querySelector('h2').textContent = jsonObj.name;
-  document.querySelector('p').textContent = 'temperatura: ' + jsonObj.main.temp;
-}
 
 const button = document.getElementById('submit');
 button.addEventListener('click', loadWeather);
@@ -16,3 +14,4 @@ function loadWeather() {
 }
 
 loadWeather();
+showDate();
