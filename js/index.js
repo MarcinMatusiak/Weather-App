@@ -10,7 +10,7 @@ function loadWeather() {
   getWeather(document.getElementById('city').value)
     .then(result => {
       showWeather(result);
-    })
+    });
 }
 
 loadWeather();
