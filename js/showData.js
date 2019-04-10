@@ -23,21 +23,18 @@ function showWeather(jsonObj) {
     document.querySelector('.weather.weather_tomorrow').src = `img/${showIcons(jsonObj.list[8].weather[0].main)}.svg`;
     // day after tomorrow
     document.querySelector('#temp_max_day_after_tomorrow_value').textContent = Math.round(day_after_tomorrow.temp_max);
-    document.querySelector('#temp_min_day_after_tomorrow_value').textContent = Math.round(day_after_tomorrow.temp_min);
     document.querySelector('#pressure_day_after_tomorrow').textContent = Math.round(day_after_tomorrow.pressure);
     document.querySelector('#humidity_day_after_tomorrow').textContent = day_after_tomorrow.humidity;
     document.querySelector('#wind_speed_day_after_tomorrow').textContent = Math.round(jsonObj.list[16].wind.speed);
     document.querySelector('.weather.weather_d3').src = `img/${showIcons(jsonObj.list[16].weather[0].main)}.svg`;
     //day fourth
     document.querySelector('#temp_max_day_fourth_value').textContent = Math.round(day_fourth.temp_max);
-    document.querySelector('#temp_min_day_fourth_value').textContent = Math.round(day_fourth.temp_min);
     document.querySelector('#pressure_day_fourth').textContent = Math.round(day_fourth.pressure);
     document.querySelector('#humidity_day_fourth').textContent = day_fourth.humidity;
     document.querySelector('#wind_speed_day_fourth').textContent = Math.round(jsonObj.list[24].wind.speed);
     document.querySelector('.weather.weather_d4').src = `img/${showIcons(jsonObj.list[24].weather[0].main)}.svg`;
     //day fifth
     document.querySelector('#temp_max_day_fifth_value').textContent = Math.round(day_fifth.temp_max);
-    document.querySelector('#temp_min_day_fifth_value').textContent = Math.round(day_fifth.temp_min);
     document.querySelector('#pressure_day_fifth').textContent = Math.round(day_fifth.pressure);
     document.querySelector('#humidity_day_fifth').textContent = day_fifth.humidity;
     document.querySelector('#wind_speed_day_fifth').textContent = Math.round(jsonObj.list[32].wind.speed);
