@@ -60,7 +60,7 @@ function showWeather(jsonObj) {
         ic = "Snow";
         break;
       case "Drizzle":
-        ic = "";
+        ic = "Shower rain";
         break;
       case "Thunderstorm":
         ic = "Thunderstorm";
