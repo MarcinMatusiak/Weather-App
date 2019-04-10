@@ -15,4 +15,4 @@ Main techologies used in project: HTML5, CSS3, JavaScript.
 
 
 
-_Additional information about the project will show up as application grows._
+**The preview of the project: [Vetero](https://vetero01.netlify.com/)**
