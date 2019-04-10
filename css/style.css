@@ -10,15 +10,16 @@
     --vlightBlue: #C3E5E7;
     --darkOrange: #DF7027;
     --darkestOrange: rgb(201, 88, 14);
-    --lightOrange: rgb(247, 158, 64);
+    --lightOrange: rgb(241, 172, 98);
     --xl-blue: #88DBF5;
     --l-blue: #21BCF0;
     --blue: #079AE5;
     --d-blue: #030324;
-    --xd-blue: #47476d;
-    --darkestBlue: #010157;
+    --xd-blue: #64647a;
+    --xdd-blue: #31315c88;
+    --darkestBlue: rgb(11, 38, 88);
     --bckNight: linear-gradient(#0e021a, #120b3b, #0d163f, #3a467c, #6d6347);
-    --bckDay: linear-gradient(rgb(196, 105, 9), #DD8627, rgb(192, 126, 55), rgb(196, 144, 88), #0d163f);
+    --bckDay: linear-gradient(#202a5a, rgb(199, 180, 128), rgb(196, 160, 60), rgb(180, 146, 50), rgb(182, 136, 9));
 }
 
 body {
@@ -51,12 +52,13 @@ body.night .container h1 {
 body.night .date {
     color: var(--lightOrange);
 }
+
 /* 
 body.night .date {
     /* padding: 0px 0px 100px 0px; */
-    /* color: var(--d-blue); */
-    /* border-bottom: 1px dashed var(--darkOrange); */
-  /*  color: (--d-blue);*/
+/* color: var(--d-blue); */
+/* border-bottom: 1px dashed var(--darkOrange); */
+/*  color: (--d-blue);*/
 /*}*/
 
 /* Day mode body *****************************************************************************************************/
@@ -69,9 +71,9 @@ body.day .container__left--today,
 body.day .container__right--tomorrow {
     box-sizing: border-box;
     padding: 25px;
-    background-color: rgb(28, 24, 70);
+    background-color: rgb(11, 38, 88);
     border-radius: 20px;
-    border: 5px solid rgba(219, 164, 44, 0.103);
+    border: 5px solid rgb(10, 39, 94);
 }
 
 body.day .container h1 {
@@ -91,6 +93,41 @@ body.day .date {
     height: 100vh;
     /* border: 1px solid red; */
 }
+
+.bar {
+    padding: 10px;
+}
+
+/* Input bar */
+input {
+    padding: 3px;
+    margin: 3px;
+    border-radius: 5px;
+}
+
+/* Button */
+.button {
+    background-color: var(--xdd-blue);
+    color: white;
+    border: 1px solid rgba(83, 80, 80, 0.637);
+    padding: 10px;
+    margin: 5px 0px 0px 50px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 10px;
+    font-size: calc(14px + (26 - 12) * ((100vw - 300px) / (1920 - 300)))/2;
+}
+
+body.day .button:hover {
+    color: var(--darkestBlue);
+    background-color: rgba(255, 255, 255, 0.13);
+}
+
+body.night .button:hover {
+    color: var(--lightOrange);
+    background-color: rgba(255, 255, 255, 0.014);
+}
+
 
 /* Left container today weather */
 .container__left {

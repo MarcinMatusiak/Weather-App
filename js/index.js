@@ -4,10 +4,6 @@ import { showWeather, showDate } from './showData.js';
 const currentDate = new Date();
 const currentTime = currentDate.getHours();
 
-const currentDate = new Date();
-const currentTime = currentDate.getHours();
-
-
 const button = document.getElementById('submit');
 button.addEventListener('click', loadWeather);
 
