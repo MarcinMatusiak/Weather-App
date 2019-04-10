@@ -1,12 +1,12 @@
 import getWeather from './weatherAPI.js';
+import { showWeather, showDate } from './showData.js';
+
 const currentDate = new Date();
 const currentTime = currentDate.getHours();
-console.log(currentTime);
 
-function showWeather(jsonObj) {
-  document.querySelector('h2').textContent = jsonObj.name;
-  document.querySelector('p').textContent = 'temperatura: ' + jsonObj.main.temp;
-}
+const currentDate = new Date();
+const currentTime = currentDate.getHours();
+
 
 const button = document.getElementById('submit');
 button.addEventListener('click', loadWeather);
@@ -20,10 +20,11 @@ function loadWeather() {
 
 function changeStyle() {
   if (19 < currentTime || currentTime <= 5)
-    document.body.className = "day";
+    document.body.className = "night";
   else
     document.body.className = "day";
 }
 
 loadWeather();
+showDate();
 changeStyle();
