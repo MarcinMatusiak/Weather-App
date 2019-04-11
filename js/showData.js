@@ -9,14 +9,12 @@ function showWeather(jsonObj) {
     //today
     document.querySelector('.temp.temp_today').innerHTML= ` ${Math.round(main.temp)} <sup>o</sup>C`;
     document.querySelector('#temp_max_today_value').textContent = Math.round(main.temp_max);
-    document.querySelector('#temp_min_today_value').textContent = Math.round(main.temp_min);
     document.querySelector('#pressure_today').textContent = Math.round(main.pressure);
     document.querySelector('#humidity_today').textContent = main.humidity;
     document.querySelector('#wind_speed_today').textContent = Math.round(jsonObj.list[0].wind.speed);
     document.querySelector('.weather.weather_today').src = `img/${showIcons(jsonObj.list[0].weather[0].main)}.svg`;
     // tomorrow
     document.querySelector('#temp_max_tomorrow_value').textContent = Math.round(tomorrow.temp_max);
-    document.querySelector('#temp_min_tomorrow_value').textContent = Math.round(tomorrow.temp_min);
     document.querySelector('#pressure_tomorrow').textContent = Math.round(tomorrow.pressure);
     document.querySelector('#humidity_tomorrow').textContent = tomorrow.humidity;
     document.querySelector('#wind_speed_tomorrow').textContent = Math.round(jsonObj.list[8].wind.speed);
