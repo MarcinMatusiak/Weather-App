@@ -8,7 +8,6 @@ const button = document.getElementById('submit');
 button.addEventListener('click', loadWeather);
 
 function loadWeather() {
-screen.orientation.lock(); // webkit only
   getWeather(document.getElementById('city').value)
     .then(result => {
       showWeather(result);
