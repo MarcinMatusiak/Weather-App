@@ -73,6 +73,14 @@ body.day {
     /* border: 10px solid dark; */
 }
 
+body.day .container__left--today {
+    height: 100%
+}
+
+.container__right--tomorrow {
+    height: auto;
+}
+
 body.day .container__left--today,
 body.day .container__right--tomorrow {
     box-sizing: border-box;
@@ -180,7 +188,7 @@ body.night .button:hover {
 }
 
 .container__left--today img {
-    height: 90%;
+    height: 45%;
 }
 
 /* Style for today weather *****************************************************************************************/
