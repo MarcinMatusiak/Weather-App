@@ -90,7 +90,7 @@ body.day .container h1 {
 }
 
 body.day .date {
-    color: var(--xd-blue);
+    color: var(--lightGreen);
 }
 
 /* Main container *****************************************************************************************************/
@@ -275,7 +275,7 @@ body.night .button:hover {
 /* RWD ****************************************************************************************/
 
 /* Mobile */
-@media (min-width: 320px) and (orientation: portrait) {
+@media (max-width: 767px) and (orientation: portrait) {
     html {
         height: 260vh;
     }
