@@ -6,7 +6,8 @@
 }
 
 :root {
-    --lighBlue: #A5D6D9;
+    --lightGreen: #d8ff01;
+    --lightBlue: #A5D6D9;
     --vlightBlue: #C3E5E7;
     --darkOrange: #DF7027;
     --darkestOrange: rgb(201, 88, 14);
@@ -22,10 +23,15 @@
     --bckDay: linear-gradient(#202a5a, rgb(199, 180, 128), rgb(196, 160, 60), rgb(180, 146, 50), rgb(182, 136, 9));
 }
 
+html {
+    height: 100vh;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     font-size: calc(14px + (26 - 12) * ((100vw - 300px) / (1920 - 300)));
     color: #fff;
+    cursor: default;
 }
 
 /* Night mode body*****************************************************************************************************/
@@ -37,7 +43,7 @@ body.night {
 body.night .container__left--today,
 body.night .container__right--tomorrow {
     padding: 25px;
-    background-color: rgba(223, 113, 39, 0.753);
+    background-color:rgba(255, 118, 1, 0.75);
     border-radius: 20px;
     border: 5px solid rgba(219, 164, 44, 0.103);
 }
@@ -90,17 +96,28 @@ body.day .date {
 /* Main container *****************************************************************************************************/
 .container {
     display: flex;
-    height: 100vh;
+    height: calc(100vh - 190px);
 }
 
 .bar {
-    padding: 10px;
+    padding: 25px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.bar div {
+    display: flex;
+    align-items: center;
+}
+
+.bar label {
+    margin-right: 10px;
 }
 
 /* Input bar */
-input {
-    padding: 3px;
-    margin: 3px;
+.bar input {
+    padding: 10px;
+    margin: 3px 10px 3px 3px;
     border-radius: 5px;
 }
 
@@ -110,11 +127,15 @@ input {
     color: white;
     border: 1px solid rgba(83, 80, 80, 0.637);
     padding: 10px;
-    margin: 5px 0px 0px 50px;
+    margin: 0 0 0 15px;
     text-align: center;
     font-family: 'Poppins', sans-serif;
     border-radius: 10px;
     font-size: calc(14px + (26 - 12) * ((100vw - 300px) / (1920 - 300)))/2;
+}
+
+.button:hover {
+    cursor: pointer;
 }
 
 body.day .button:hover {
@@ -131,17 +152,15 @@ body.night .button:hover {
 /* Left container today weather */
 .container__left {
     flex-grow: 1;
-}
+    width: 30%;
+    padding: 0px 7px 0px 25px;
 
-/* Right container all next days */
-.container__left,
-.container__right {
-    padding: 15px;
-    padding-left: 0px;
 }
 
 .container__right {
     flex-grow: 2;
+    width: 60%;
+    padding: 0px 25px 15px 7px;
     display: flex;
     flex-direction: column;
 }
@@ -160,11 +179,15 @@ body.night .button:hover {
     height: 100%;
 }
 
+.container__left--today img {
+    height: 90%;
+}
+
 /* Style for today weather *****************************************************************************************/
 /* TU STYLUJEMY KOLORKI ITP. */
 .container__left--today div {
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     width: 100%;
     height: auto;
 }
@@ -186,17 +209,11 @@ body.night .button:hover {
 }
 
 .weather_tomorrow {
-    width: 60%;
+    width: 30%;
 }
 .container__right--tomorrow :last-child {
     justify-content: space-between;
 }
-
-.container__right--tomorrow :last-child > p {
-
-}
-
-
 
 /* Style for next days weather ****************************************************************************************/
 .container__right--nextDays {
@@ -212,20 +229,19 @@ body.night .button:hover {
     margin-top: 15px;
     margin-right: 15px;
     border-radius: 10px;
-    background-color: #ffffff4d;
+    background-color: #0800004d;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
-
 
 .container__right--nextDays>div:last-child {
     margin-right: 0;
 }
 
 .container__right--nextDays>div {
-    width: 31%;
-    height: auto;
+    width: 33%;
+    height: 100%;
 }
 
 .container__right--nextDays img {
@@ -239,17 +255,238 @@ body.night .button:hover {
     width: 100%;
     height: auto;
     display: flex;
-
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5px;
 }
 
 .container__right--nextDays div>div:last-child {
     width: 100%;
     height: auto;
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .small {
     font-size: 0.8em;
+}
+
+/* RWD ****************************************************************************************/
+
+/* Mobile */
+@media (min-width: 320px) and (orientation: portrait) {
+    html {
+        height: 260vh;
+    }
+
+    .bar {
+        padding: 25px 0;
+    }
+
+    .bar div {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .bar input {
+        padding: 10px;
+        width: 30vw;
+    }
+
+    .bar button {
+        margin: 0 25px;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .container__left,
+    .container__right {
+        width: 100%;
+        padding: 0 25px 25px 25px;
+    }
+
+    .container__left--today img {
+        height: 33%;
+    }
+
+    .container__left--today,
+    .container__right--tomorrow {
+        height: calc(100vh - 120px);
+    }
+
+    .container__right--nextDays {
+        flex-direction: column;
+    }
+
+    .container__right--nextDays div {
+        width: 100%;
+        height: 20vh;
+    }
+
+    .weather_tomorrow {
+        width: 65%;
+    }
+
+}
+
+/* Tablets */
+@media (min-width: 768px) and (orientation: portrait) {
+     html {
+         height: 260vh;
+     }
+
+     .container {
+         flex-direction: column;
+     }
+
+     .container__left,
+     .container__right {
+         width: 100%;
+         padding: 0 25px 25px 25px;
+     }
+
+     .container__left--today img {
+         height: 65%;
+     }
+
+     .container__left--today,
+     .container__right--tomorrow {
+         height: calc(100vh - 120px);
+     }
+
+     .container__right--nextDays {
+         flex-direction: column;
+     }
+
+     .container__right--nextDays div {
+         width: 100%;
+         height: 20vh;
+     }
+
+     .weather_tomorrow {
+         width: 65%;
+     }
+
+}
+
+/* Big tablets and small laptops */
+@media (min-width: 1024px) and (orientation: portrait) {
+    html {
+        height: 150vh;
+    }   
+
+    .container {
+        flex-direction: column;
+    }
+    
+    .container__left,
+    .container__right {
+        width: 100%;
+        padding: 0 25px 25px 25px;
+    }
+
+    .container__left--today img {
+        height: 65%;
+    }
+
+    .container__left--today,
+    .container__right--tomorrow {
+        height: 45vh;
+    }
+
+    .container__right--nextDays {
+        flex-direction: column;
+    }
+
+    .container__right--nextDays div {
+        width: 100%;
+        height: 15vh;
+    }
+
+}
+
+/* Animations ************************************************************************************/
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.fadeInDown {
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+    animation: fadeInDown 1.5s;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInLeft {
+  -webkit-animation-name: fadeInLeft;
+  animation-name: fadeInLeft;
+  animation: fadeInLeft 2s;
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(100%, 0, 0);
+        transform: translate3d(100%, 0, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.fadeInRight {
+    -webkit-animation-name: fadeInRight;
+    animation-name: fadeInRight;
+    animation: fadeInRight 1s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.fadeInUp {
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+    animation: fadeInUp 1.5s;
 }
