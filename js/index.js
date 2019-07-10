@@ -10,21 +10,19 @@ const currentTime = currentDate.getHours();
 const button = document.getElementById('submit');
 button.addEventListener('click', loadWeather);
 
+const input = document.getElementById('city');
+input.addEventListener('change', showPredictions);
+//input.addEventListener('keyup', showPredictions);
+
 function loadWeather() {
-  getWeather(document.getElementById('city').value)
+  getWeather(input.value)
     .then(result => {
       showWeather(result);
     });
 };
 
-const input = document.getElementById('city');
-input.addEventListener('keyup', showPredictions);
-
 function showPredictions() {
-  autocomplete(input.value)
-    .then(result => {
-      console.log(result);
-    })
+  autocomplete(input.value); 
 };
 
 function changeStyle() {

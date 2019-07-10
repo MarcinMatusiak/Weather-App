@@ -3,14 +3,28 @@ const types = '(cities)';
 const apiKey = 'AIzaSyDSEVUXrp5DMeCJKRPIAbfshuBq-vzK0nA';
 const language = 'pl';
 
-function autocomplete(userInput) {
-    const API = `${url}input=${userInput}&types=${types}&language=${language}&key=${apiKey}`;
+const predictions = document.getElementById('predictions');
 
-    return fetch(API, {mode: 'no-cors'})
-        .then(response => response())
-        .catch(function (err) {
-            console.log('Fetch Error :-S', err);
-        })
+function autocomplete(userInput) {
+    
+    const cities = [];
+    
+    const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+    const apiUrl = `${url}input=${userInput}&types=${types}&language=${language}&key=${apiKey}`;
+    fetch(proxyUrl + apiUrl)
+        .then(response => response.json())
+        .then(data => cities.push(...data.predictions))
+    
+    console.log(cities);
+    
+    
+    const listItem = cities.map(place => {
+        return `<li><span>${place}</span></li>`;
+    });
+    //.join('');
+
+    console.log(listItem)
+    //predictions.innerHTML = listItem;
 }
 
 export default autocomplete;
