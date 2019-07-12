@@ -15,13 +15,13 @@
 <!-- Main container -->
 <div class="container">
     <div>
-        <form>
-            Miasto: <input id="city" value="Wrocław"></input>
-            <button id="submit">Wybierz</button>
-            <ul id="predictions">
-                <li>prediction</li>
-            </ul>
-        </form>
+        Miasto: <input list="predictions" id="city" value="Wrocław, Polska" autocomplete="off"/>
+        <datalist id="predictions">
+
+        </datalist>
+        <button id="submit">Wybierz</button>
+        
+        
         
     </div>
     <section class="container__left">

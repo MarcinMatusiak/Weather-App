@@ -5,26 +5,16 @@ const language = 'pl';
 
 const predictions = document.getElementById('predictions');
 
-function autocomplete(userInput) {
-    
-    const cities = [];
-    
+async function getPredictions(userInput) {
+
     const proxyUrl = "https://cors-anywhere.herokuapp.com/";
     const apiUrl = `${url}input=${userInput}&types=${types}&language=${language}&key=${apiKey}`;
-    fetch(proxyUrl + apiUrl)
+    const cities = await fetch(proxyUrl + apiUrl)
         .then(response => response.json())
-        .then(data => cities.push(...data.predictions))
+        .then(data => data.predictions.map(place => `<option value="${place.description}" class="suggestion">`));
     
-    console.log(cities);
-    
-    
-    const listItem = cities.map(place => {
-        return `<li><span>${place}</span></li>`;
-    });
-    //.join('');
+    predictions.innerHTML=cities.join(' ');
 
-    console.log(listItem)
-    //predictions.innerHTML = listItem;
-}
+};
 
-export default autocomplete;
+export default getPredictions;

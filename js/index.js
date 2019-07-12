@@ -1,19 +1,33 @@
 import getWeather from './weatherAPI.js';
 import { showWeather, showDate } from './showData.js';
 import { getShortDate, getFullDate }from './date.js';
-import autocomplete from './autocomplete.js';
+import getPredictions from './autocomplete.js';
 
 const currentDate = new Date();
 const currentTime = currentDate.getHours();
 
 
 const button = document.getElementById('submit');
-button.addEventListener('click', loadWeather);
+button.addEventListener('click', loadWeather)
 
 const input = document.getElementById('city');
-input.addEventListener('change', showPredictions);
-//input.addEventListener('keyup', showPredictions);
-
+input.addEventListener('keydown', function (e) {
+  if (e.keyCode === 38) return;
+  if (e.keyCode === 40) return;
+  else showPredictions (e)
+});
+input.addEventListener('change', loadWeather);
+input.addEventListener('keydown', function (e) {
+  if (e.keyCode === 13) loadWeather(e)
+  }
+);
+/* dodać eventlistenera na klawisz enter na zaznaczonej podpowiedzi
+const suggestions = document.getElementsByClassName('suggestion')
+Array.from(suggestions).forEach(e => e.addEventListener('keydown', e => {
+  if (e.keyCode === 13) loadWeather(e);
+  }
+));
+*/
 function loadWeather() {
   getWeather(input.value)
     .then(result => {
@@ -22,7 +36,7 @@ function loadWeather() {
 };
 
 function showPredictions() {
-  autocomplete(input.value); 
+  getPredictions(input.value); 
 };
 
 function changeStyle() {
@@ -35,4 +49,3 @@ function changeStyle() {
 loadWeather();
 showDate();
 changeStyle();
-autocomplete();
