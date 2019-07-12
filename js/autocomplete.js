@@ -1,6 +1,6 @@
 const url = 'https://maps.googleapis.com/maps/api/place/autocomplete/json?';
 const types = '(cities)';
-const apiKey = 'AIzaSyDSEVUXrp5DMeCJKRPIAbfshuBq-vzK0nA';
+const apiKey = '';
 const language = 'pl';
 
 const predictions = document.getElementById('predictions');
