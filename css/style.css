@@ -2,175 +2,649 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 :root {
-    --lighBlue: #A5D6D9;
+    --lightGreen: #d8ff01;
+    --lightBlue: #A5D6D9;
     --vlightBlue: #C3E5E7;
     --darkOrange: #DF7027;
     --darkestOrange: rgb(201, 88, 14);
-    --lightOrange: #DD8627;
+    --lightOrange: rgb(241, 172, 98);
     --xl-blue: #88DBF5;
     --l-blue: #21BCF0;
     --blue: #079AE5;
     --d-blue: #030324;
-    --xd-blue: #47476d;
-    --darkestBlue: #010157;
-    --bckNight: radial-gradient(#47476d, #030324);
-    --bckDay: radial-gradient(#DF7027, #DD8627 60%);
+    --xd-blue: #64647a;
+    --xdd-blue: #31315c88;
+    --darkestBlue: rgb(11, 38, 88);
+    --bckNight: linear-gradient(#0e021a, #120b3b, #0d163f, #3a467c, #6d6347);
+    --bckDay: linear-gradient(#202a5a, rgb(199, 180, 128), rgb(196, 160, 60), rgb(180, 146, 50), rgb(182, 136, 9));
+}
+
+html {
+    height: 100vh;
 }
 
 body {
     font-family: 'Poppins', sans-serif;
     font-size: calc(14px + (26 - 12) * ((100vw - 300px) / (1920 - 300)));
     color: #fff;
+    cursor: default;
 }
 
+/* Night mode body*****************************************************************************************************/
 body.night {
     background-image: var(--bckNight);
+    /* background-size: 100%; */
 }
 
+body.night .container__left--today,
+body.night .container__right--tomorrow {
+    padding: 25px;
+    background-color:rgba(255, 118, 1, 0.75);
+    border-radius: 20px;
+    border: 5px solid rgba(219, 164, 44, 0.103);
+}
+
+body.night .container h1 {
+    display: inline-block;
+    padding: 20px auto;
+    color: white;
+    text-shadow: 1px 1px #9692a8;
+}
+
+body.night .date {
+    color: var(--lightOrange);
+}
+
+/* 
+body.night .date {
+    /* padding: 0px 0px 100px 0px; */
+/* color: var(--d-blue); */
+/* border-bottom: 1px dashed var(--darkOrange); */
+/*  color: (--d-blue);*/
+/*}*/
+
+/* Day mode body *****************************************************************************************************/
 body.day {
     background-image: var(--bckDay);
+    /* border: 10px solid dark; */
 }
 
-h1.header {
-    display: block;
-    text-align: center;
+body.day .container__left--today {
+    height: 100%
+}
+
+.container__right--tomorrow {
+    height: auto;
+}
+
+body.day .container__left--today,
+body.day .container__right--tomorrow {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 15px;
+    background-color: rgb(11, 38, 88);
+    border-radius: 20px;
+    border: 5px solid rgb(10, 39, 94);
+}
+
+body.day .container h1 {
+    display: inline-block;
     color: white;
+    text-shadow: 1px 1px #9692a8;
+
+}
+
+body.day .date {
+    color: var(--lightGreen);
 }
 
 /* Main container *****************************************************************************************************/
 .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    height: 100vh;
+    height: calc(100vh - 170px);
 }
+
+.bar {
+    padding: 25px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+}
+
+.bar div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+.bar label {
+    margin-right: 10px;
+}
+
+/* Input bar */
+.bar input {
+    padding: 10px;
+    margin: 3px 10px 3px 3px;
+    border-radius: 5px;
+}
+
+/* Button */
+.button {
+    background-color: var(--xdd-blue);
+    color: white;
+    border: 1px solid rgba(83, 80, 80, 0.637);
+    padding: 10px;
+    margin: 0 0 0 15px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 10px;
+    font-size: calc(14px + (26 - 12) * ((100vw - 300px) / (1920 - 300)))/2;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+body.day .button:hover {
+    color: var(--darkestBlue);
+    background-color: rgba(255, 255, 255, 0.13);
+}
+
+body.night .button:hover {
+    color: var(--lightOrange);
+    background-color: rgba(255, 255, 255, 0.014);
+}
+
 
 /* Left container today weather */
 .container__left {
-    flex-grow: 1;
-}
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    width: 30%;
+    padding: 0px 7px 0px 25px;
 
-/* Right container all next days */
-
-.container__left,
-.container__right {
-    padding: 25px;
 }
 
 .container__right {
-    flex-grow: 2;
+    -webkit-box-flex: 2;
+        -ms-flex-positive: 2;
+            flex-grow: 2;
+    width: 60%;
+    padding: 0px 25px 15px 7px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 
 /* Style for today & tomorrow weather *********************************************************************************/
 .container__left--today,
 .container__right--tomorrow {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-grow: 1;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
     width: 100%;
-    /*height: 100%; prawy kontener nie może miec 100% wysokości bo nie mieszczą się pozostałe dni*/
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
 }
 
 .container__left--today {
     height: 100%;
 }
 
+.container__left--today img {
+    height: 30%;
+}
+
+
 /* Style for today weather *****************************************************************************************/
 /* TU STYLUJEMY KOLORKI ITP. */
-.container__left--today {
-    padding: 25px;
-    background-color: #ffffff4d;
-    border-radius: 20px;
-}
-
 .container__left--today div {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-around;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
     width: 100%;
     height: auto;
-}
-
-body.day .container h1 {
-    color: var(--darkestBlue);
-}
-
-body.night .container h1 {
-    color: var(--darkestOrange);
 }
 
 /* Style for tomorrow weather *****************************************************************************************/
 /* TU STYLUJEMY KOLORKI ITP. */
-.container__right--tomorrow {
-    padding: 25px;
-    background-color: #ffffff4d;
-    border-radius: 20px;
-}
-
 .container__right--tomorrow div {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     width: 100%;
     height: auto;
 }
 
+.container__right--tomorrow :first-child{
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+}
+
 .weather_tomorrow {
-    max-width: 20%;
+    width: 20%;
+}
+.container__right--tomorrow :last-child {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
 }
 
 /* Style for next days weather ****************************************************************************************/
 .container__right--nextDays {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: 100%;
-    height: 56%;
+    height: auto;
 }
 
 /* Style for small weather days */
 /* TU STYLUJEMY KOLORKI ITP. */
-
-body.day .date {
-    color: var(--xd-blue);
-}
-
-body.night .date {
-    color: var(--darkOrange);
-}
-
 .container__right--nextDays>div {
     padding: 10px;
-    margin-top: 25px;
-    margin-right: 25px;
+    margin-top: 15px;
+    margin-right: 15px;
     border-radius: 10px;
-    background-color: #ffffff4d;
+    background-color: #0800004d;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
 }
 
 .container__right--nextDays>div:last-child {
     margin-right: 0;
 }
 
-.container__right--nextDays div {
-    width: 25%;
+.container__right--nextDays>div {
+    width: 33%;
+    height: 100%;
+}
+
+.container__right--nextDays img {
+    width: 50px;
     height: auto;
+    -ms-flex-item-align: center;
+        align-self: center;
+
 }
 
 .container__right--nextDays div>div:first-child {
     width: 100%;
     height: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 0 5px;
 }
 
 .container__right--nextDays div>div:last-child {
     width: 100%;
     height: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+}
+
+.small {
+    font-size: 0.8em;
+}
+
+/* RWD ****************************************************************************************/
+
+/* Mobile */
+@media (max-width: 767px) and (orientation: portrait) {
+    html {
+        height: 260vh;
+    }
+
+    .bar {
+        padding: 25px 0;
+    }
+
+    .bar div {
+        width: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: end;
+            -ms-flex-pack: end;
+                justify-content: flex-end;
+    }
+
+    .bar input {
+        padding: 10px;
+        width: 30vw;
+    }
+
+    .bar button {
+        margin: 0 25px;
+    }
+
+    .container {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+    }
+
+    .container__left,
+    .container__right {
+        width: 100%;
+        padding: 0 25px 25px 25px;
+    }
+
+    .container__left--today img {
+        height: 33%;
+    }
+
+    .container__left--today,
+    .container__right--tomorrow {
+        height: calc(100vh - 120px);
+    }
+
+    .container__right--nextDays {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+    }
+
+    .container__right--nextDays div {
+        width: 100%;
+        height: 20vh;
+    }
+
+    .weather_tomorrow {
+        width: 65%;
+    }
+
+}
+
+/* Tablets */
+@media (min-width: 768px) and (orientation: portrait) {
+     html {
+         height: 260vh;
+     }
+
+     .container {
+         -webkit-box-orient: vertical;
+         -webkit-box-direction: normal;
+             -ms-flex-direction: column;
+                 flex-direction: column;
+     }
+
+     .container__left,
+     .container__right {
+         width: 100%;
+         padding: 0 25px 25px 25px;
+     }
+
+     .container__left--today img {
+         height: 65%;
+     }
+
+     .container__left--today,
+     .container__right--tomorrow {
+         height: calc(100vh - 120px);
+     }
+
+     .container__right--nextDays {
+         -webkit-box-orient: vertical;
+         -webkit-box-direction: normal;
+             -ms-flex-direction: column;
+                 flex-direction: column;
+     }
+
+     .container__right--nextDays div {
+         width: 100%;
+         height: 20vh;
+     }
+
+     .weather_tomorrow {
+         width: 65%;
+     }
+
+}
+
+/* Big tablets and small laptops */
+@media (min-width: 1024px) and (orientation: portrait) {
+    html {
+        height: 150vh;
+    }   
+
+    .container {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+    }
+    
+    .container__left,
+    .container__right {
+        width: 100%;
+        padding: 0 25px 25px 25px;
+    }
+
+    .container__left--today img {
+        height: 65%;
+    }
+
+    .container__left--today,
+    .container__right--tomorrow {
+        height: 45vh;
+    }
+
+    .container__right--nextDays {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+    }
+
+    .container__right--nextDays div {
+        width: 100%;
+        height: 15vh;
+    }
+
+}
+
+/* Animations ************************************************************************************/
+
+@-webkit-keyframes fadeInDown {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.fadeInDown {
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+    -webkit-animation: fadeInDown 1.5s;
+            animation: fadeInDown 1.5s;
+}
+
+@-webkit-keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInLeft {
+  -webkit-animation-name: fadeInLeft;
+  animation-name: fadeInLeft;
+  -webkit-animation: fadeInLeft 2s;
+          animation: fadeInLeft 2s;
+}
+
+@-webkit-keyframes fadeInRight {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(100%, 0, 0);
+        transform: translate3d(100%, 0, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(100%, 0, 0);
+        transform: translate3d(100%, 0, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.fadeInRight {
+    -webkit-animation-name: fadeInRight;
+    animation-name: fadeInRight;
+    -webkit-animation: fadeInRight 1s;
+            animation: fadeInRight 1s;
+}
+
+@-webkit-keyframes fadeInUp {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.fadeInUp {
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+    -webkit-animation: fadeInUp 1.5s;
+            animation: fadeInUp 1.5s;
 }

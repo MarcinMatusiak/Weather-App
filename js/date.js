@@ -17,7 +17,7 @@ function getShortDate(n=0) {
 function getCurrentHour() {
     const hour = new Date().getHours();
     const minutes = new Date().getMinutes();
-    return `${hour} : ${minutes}`;
+    return `${(hour.toString()).padStart(2, '0')} : ${(minutes.toString()).padStart(2, '0')}`;
 }
 
 export { getFullDate, getShortDate, getCurrentHour };
