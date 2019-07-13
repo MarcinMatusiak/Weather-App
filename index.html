@@ -15,11 +15,11 @@
 <!-- Main container -->
 <div class="bar fadeInDown">
     <div>
-        <label for="city">Miasto:</label>
-    <input id="city" value="Wrocław"></input>
-        <button class="button" id="submit">Wybierz</button>
+        Miasto: <input list="predictions" id="city" value="Wrocław, Polska" autocomplete="off"/>
+        <datalist id="predictions">
+        </datalist>
+        <button id="submit">Wybierz</button>
     </div>
-
 </div>
 <div class="container">
     
